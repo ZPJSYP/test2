@@ -14,6 +14,8 @@ class BookInfo(models.Model):
     # 删除标记
     isDeleted = models.BooleanField(default=False)
 
+    class Meta:
+        db_table = "book_info"
 
 class HeroInfo(models.Model):
     # 英雄名
@@ -26,3 +28,6 @@ class HeroInfo(models.Model):
     hbook = models.ForeignKey('BookInfo',on_delete=models.CASCADE)
     # 删除标记
     isDeleted = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = "hero_info"

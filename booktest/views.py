@@ -20,3 +20,13 @@ def create(request):
     b.bread = 999
     b.save()
     return HttpResponseRedirect('/books')
+
+
+def delete(request, id):
+    b = BookInfo.objects.get(id=id)
+    b.delete()
+    return HttpResponseRedirect('/books')
+
+def demo(request):
+    # 跳转会替换掉自己这块，例如这里会有这个变化 /books/jojo -> /books/dio
+    return HttpResponseRedirect('dio')
